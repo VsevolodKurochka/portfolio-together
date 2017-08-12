@@ -1,0 +1,116 @@
+.kitchen{
+	&__roof{
+		@include pos(relative);
+		height: 20px;
+		width: 100%;
+		font-size: 0;
+		z-index: z('default') + 1;
+		&:before{
+			@include pseudo();
+			left: 50%;
+			top: 0;
+			width: 95%;
+			transform: translateX(-50%);
+			height: 20px;
+			background-color: $color-roof;
+		}
+		&-part{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			position: relative;
+			left: 0;
+			width: 100%;
+			height: 10px;
+			
+			&-inner{
+				position: relative;
+				top: 0;
+				height: 100%;
+				background-color: $color-roof-part;
+				border-radius: 7.5px;
+				flex-basis: 56px;
+				width: 56px;
+				&_big{
+					width: calc(100% - 120px);
+					flex-basis: calc(100% - 120px);
+				}
+			}
+			&_1{
+				top: 0;
+			}
+			&_2{
+				top: 6px;
+				left: -10px;
+			}
+			&_reverse{
+				flex-direction: row-reverse;
+			}
+		}
+		@include resp-min(sm){
+			height: 42px;
+			&:before{
+				height: 42px;
+			}
+			&-part{
+				padding-left: 15px;
+				padding-right: 15px;
+				height: 15px;
+				&_2{
+					top: 15px;
+				}
+			}
+		}
+	}
+	&__lamp{
+		text-align: center;
+		&-inner{
+			@include pos(relative);
+			display: inline-block;
+			font-size: 0;
+		}
+		&-img{
+			position: relative;
+			z-index: z('default');
+		}
+		svg{
+			width: 200px;
+		}
+	}
+	&__lamp_purple &__lamp-st1{
+		fill: #92278F;
+	}
+	&__lamp_purple &__lamp-st2{
+		fill: #7A1878;
+	}
+	&__lamp_purple &__lamp-st3{
+		fill: none;
+	}
+	&__bulb{
+		position: absolute;
+		width: 51px;
+		transform: scaleY(-1);
+		svg{
+			width: 100%;
+		}
+		&.active path{
+			fill: #FFDA44;
+		}
+	}
+	@include resp-min(md){
+		&__bulb{
+			&_1{
+				top: 202px;
+				left: 5px;
+			}
+			&_2{
+				top: 248px;
+				left: 75px;
+			}
+			&_3{
+				left: 133px;
+				top: 180px;
+			}
+		}
+	}
+}

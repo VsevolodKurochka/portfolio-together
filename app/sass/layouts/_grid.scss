@@ -105,10 +105,14 @@ End:  HIDDEN AND VISIBLE UTILITIES
   }  
 }
 %padding-block{
-  padding-top: 50px;
-  padding-bottom: 50px; 
+  
 }
 .vsection{
-  @extend %padding-block;
-  @extend .relative;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include resp-min(md){
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }

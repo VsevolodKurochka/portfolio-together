@@ -1,0 +1,130 @@
+.about-us{
+	@include resp-max(sm){
+		padding-top: 0;
+	}
+	@include resp-min(sm){
+		&__part{
+			position: absolute;
+			top: 0;
+			width: 50%;
+			height: 100%;
+			&_man{
+				left: 0;
+				background-color: getComp('bg', $colors-man);
+			}
+			&_girl{
+				right: 0;
+				background-color: getComp('bg', $colors-girl);
+			}
+		}
+	}
+}
+.person{
+	&__header{
+		margin-bottom: 30px;
+		font-size: 0;
+		&-icon{
+			width: 50px;
+			height: 50px;
+			&-inner{
+				position: relative;
+				display: inline-block;
+				&:before{
+					@include pseudo();
+					width: 25px;
+					height: 25px;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%,-50%);
+				}
+			}
+		}
+		
+	}
+	&__body{
+		letter-spacing: 3px;
+	}
+	&__title,
+	&__name{
+		line-height: 1.1;
+		font-weight: bold;
+	}
+	&__title{
+		margin-bottom: 25px;
+		font-size: 20px;
+		@include fs('about-us-title');
+	}
+	&__name{
+		margin-bottom: 30px;
+		font-size: 35px;
+		@include fs('about-us-name');
+	}
+	&__description{
+		display: inline-block;
+		max-width: 370px;
+		font-size: 18px;
+		font-weight: 900;
+		@include fs('about-us-description');
+	}
+	&_man &__title{
+		color: getComp('greeting', $colors-man);
+	}
+	&_man &__name{
+		color: getComp('name', $colors-man);
+	}
+	&_man &__description{
+		color: getComp('description', $colors-man);
+	}
+	&_girl{
+		text-align: right;
+	}
+	&_girl &__title{
+		color: getComp('greeting', $colors-girl);
+	}
+	&_girl &__name{
+		color: getComp('name', $colors-girl);
+	}
+	&_girl &__description{
+		color: getComp('description', $colors-girl);
+	}
+	@include resp-max(sm){
+		padding-top: 45px;
+		padding-bottom: 45px;
+		&_man{
+			background-color: getComp('bg', $colors-man);
+		}
+		&_girl{
+			background-color: getComp('bg', $colors-girl);
+		}
+		&__header{
+			&-icon{
+				&-wrap{
+					margin-bottom: 15px;
+				}
+			}
+			&-image{
+				max-width: 150px;
+			}
+		}
+	}
+	@include resp-min(sm){
+		&_girl{
+			align-self: flex-end;
+		}
+		&__name{
+			margin-bottom: 45px;
+		}
+		&__header{
+			&-image{
+				max-width: 50%;
+			}
+		}
+	}
+	@include resp-min(md){
+		&__header{
+			&-image{
+				max-width: 320px;
+			}
+		}
+	}
+}

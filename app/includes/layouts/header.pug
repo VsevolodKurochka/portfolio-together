@@ -1,15 +1,52 @@
 include ../bem/index
 header.site-header
+	//-+b.wave._bottom._brand-1
+		+e.SVG.item._1(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 198" xml:space="preserve")
+			path( class="st0" d="M1919,123C1545.8,123,1427.1,1.8,945.8,2C465.8,2,345.8,123-1,123v77h1920C1919,200,1919,152,1919,123z"))
 	.vcontainer
 		+b.monitor
 			+e.image
-				img(src="img/monitor.png")
-			+e.header
-				+e.SPAN.header-act._close
-				+e.SPAN.header-act._expand
-				+e.span.header-act._turn
-			+e.body
-				+e.UL.list
-					+e.LI.list-item
-						+e.SPAN.list-item-number 1
-						+e.P.list-item-code._blue._indent-1 <!DOCTYPE html>
+				img(src="img/Monitor_flat.svg")
+				//-svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 792 612" xml:space="preserve")
+					style.
+						.st0{fill:#F2F2F2;}
+						.st1{fill:#E5E5E5;}
+						.st2{fill:#CCCCCC;}
+						.st3{fill:#1A1A1A;stroke:#000000;stroke-miterlimit:10;}
+						.st4{fill:#151515;}
+						.st5{fill:#FFFFFF;}
+						.st6{fill:#111111;}
+					rect(x="358.8" y="389.9" class="st0" width="89.4" height="48.9")
+					rect(x="303.5" y="438.9" class="st1" width="200" height="4.8")
+					rect(x="358.8" y="390" class="st2" width="89.4" height="18.1")
+					g
+						path(class="st3" d="M439.6,389.9H175.2c-12.2,0-22-9.8-22-22V107.1")
+						path(class="st3" d="M153.2,107.1c0-12.2,9.8-22,22-22h456.5c12.2,0,22,9.8,22,22v260.8c0,12.2-9.8,22-22,22H439.6")
+						path(class="st4" d="M653.7,367.9c0,12.2-9.8,22-22,22H175.2c-12.2,0,456.5-304.8,456.5-304.8c12.2,0,22,9.8,22,22V367.9z")
+					g
+						rect(x="174.4" y="105.3" class="st5" width="458" height="262.3")
+						path(d="M632,105.8v261.3h-457V105.8H632 M633,104.8h-459v263.3h459V104.8L633,104.8z")
+					circle(class="st6" cx="403.5" cy="95.7" r="4.8")
+					circle(cx="403.5" cy="95.8" r="2.1")
+			+e.area
+				+e.header
+					+e.header-act._close
+					+e.header-act._expand
+					+e.header-act._turn
+				+e.body
+					+e.UL.list
+						+e.LI.list-item
+							+e.number 1
+							+e.code._blue._indent-1 #{'<!DOCTYPE html>'}
+						+e.LI.list-item
+							+e.number 2
+							+e.code._blue._indent-1 #{'<html>'}
+						+e.LI.list-item
+							+e.number 3
+							+e.code._green._indent-3 #{'<head>'}
+						+e.LI.list-item
+							+e.number 4
+							+e.code._yellow._indent-5 #{'<title>'} <span class="color-black">Welcome!</span> #{'</title>'}
+					+e.title-wrap
+						+e.H1.title.vtitle-big <span class="color-green">KitchenOfD</span><span class="monitor__part-2">esign</span>
+						+e.P.title-small.vtitle-small.text-right.monitor__part-2 Web Studio

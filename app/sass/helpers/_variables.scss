@@ -10,12 +10,55 @@
 		$color-brand-1: #f24d16;
 		$color-brand-2: #f00;
 
+	// Header
+
+		// Monitor
+			
+			$monitor-ui: #ddd;
+
+			$monitor-acts-list: (
+				'close'			: #ea1123,
+				'expand'		: #f8e042,
+				'turn'			: #7dbf44
+			);
+			
+			// Highlighting code inside monitor
+			$monitor-syntax-highlighting: (
+				'blue'			: #3a7dda,
+				'green'			: #18bc9c,
+				'yellow'		: #edd834
+			);
 
 	// Navigation
 
 		$color-menu: #f7f7f7;
 		$color-item: #929292;
 		$color-active-item: #f24d16;
+
+	
+	// Sections
+
+		// About Us
+			
+
+			$colors-man: (
+				'bg'						: #00a8ec,
+				'greeting'			: #b0f718,
+				'name'					: #fff7f7,
+				'description'		: #f7ca18
+			);
+
+			$colors-girl: (
+				'bg'						: #f59fbc,
+				'greeting'			: #8e44ad,
+				'name'					: #e2fbca,
+				'description'		: #e4f1fe
+			);
+
+		// Skills
+
+			$color-roof: #fffc00;
+			$color-roof-part: #000;
 
 // Dependencies
 

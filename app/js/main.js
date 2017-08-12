@@ -13,7 +13,8 @@ $(document).ready(function(){
 	// Scroll to block
 		$('.anchor').click(function(e){
 			e.preventDefault();
-			scroll($( $(this).attr('href') ), 1500);
+			var el = $($(this).attr('href'));
+			el.length ? scroll(el, 1500) : '';
 		});
 
 

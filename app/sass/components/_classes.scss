@@ -26,6 +26,12 @@
   &-black{
     color: setColor('dark', 'black');
   }
+  &-green{
+    color: setColor('green');
+  }
+  &-white{
+    color: setColor('white');
+  }
 }
 
 .bg{

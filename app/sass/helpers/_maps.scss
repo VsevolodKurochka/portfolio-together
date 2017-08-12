@@ -47,7 +47,10 @@ $colors: (
 		'base'  : #fff
 	),
 	'green': (
-		'base' 	: #5bb85d
+		'base' 	: #4cd4b0
+	),
+	'blue': (
+		'base'	: #00a8ec
 	)
 );
 
@@ -55,15 +58,26 @@ $colors: (
 /// Sizes for elements.
 $sizes: (
 	'vtitle-big': (
-		xs:   30px,
-		sm:   40px,
-		lg:   50px
+		xs:   45px,
+		sm:   80px,
+		md:   100px
 	),
 	'vtitle': (
 		md:   40px
 	),
 	'vtitle-small': (
 		sm:   30px
+	),
+	'about-us-title': (
+		md: 	35px
+	),
+	'about-us-name': (
+		xs:   30px,
+		sm:   40px,
+		md:   65px,
+	),
+	'about-us-description': (
+		md: 	22px
 	)
 );
 

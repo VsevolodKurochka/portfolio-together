@@ -30,14 +30,17 @@
 @import 'components/list';
 @import 'components/collapse';
 
-@import 'parts/sections/intro';
-
-@import 'parts/pages/thx';
-@import 'parts/pages/404';
+@import 'parts/sections/about-us';
+@import 'parts/sections/skills';
 
 @import "dev/loader";
 @import "dev/text";
 @import "dev/dev";
+@import "dev/monitor";
+@import "dev/wave";
+
+@import 'parts/pages/thx';
+@import 'parts/pages/404';
 
 @import 'fontawesome/font-awesome';
 

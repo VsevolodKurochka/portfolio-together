@@ -1,24 +1,96 @@
 %vtitle-default{
-	margin-top: 10px;
-	margin-bottom: 15px;
 	line-height: 1.2;
-	font-weight: normal;
 }
 .vtitle{
-	text-transform: uppercase;
-	font-size: 24px;
-	@include fs('vtitle');
-	@extend %vtitle-default;
 	&-small{
-		font-size: 20px;
+		font-size: 14px;
 		@include fs('vtitle-small');
 		@extend %vtitle-default;
 	}
 	&-big{
 		font-size: 30px;
 		@include fs('vtitle-big');
-		@extend .bold !optional;
+		@extend .regular !optional;
 		@extend %vtitle-default;
+	}
+}
+.group{
+	margin-bottom: 45px;
+	font-weight: bold;
+	&__title{
+		font-size: 45px;
+		line-height: 1;
+		margin-bottom: 30px;
+	}
+	&__letter{
+		position: relative;
+		line-height: 1;
+		&:before{
+			@include pseudo(attr(data-letter));
+			left: -7.5px;
+			top: 5px;
+			font-size: inherit;
+			color: inherit;
+			opacity: 0.2;
+		}
+		&:after{
+			@include pseudo();
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 3px;
+		}
+		&_brand-1{
+			color: setColor('brand-1');
+			&:after{
+				background-color: setColor('brand-1');
+			}
+		}
+		&_blue{
+			color: setColor('blue');
+			&:after{
+				background-color: setColor('blue');
+			}
+		}
+	}
+	@include resp-max(xs){
+		&__text{
+			font-size: 14px;
+		}
+	}
+	@include resp-min(sm){
+		margin-bottom: 45px;
+		&__title{
+			font-size: 45px;
+			margin-bottom: 60px;
+		}
+		&__letter{
+			font-size: 90px;
+			padding-bottom: 0;
+			&:after{
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				height: 10px;
+			}
+			&:before{
+				left: -20px;
+				top: 15px;
+			}
+		}
+	}
+	@include resp-min(lg){
+		margin-bottom: 90px;
+		&__title{
+			font-size: 90px;
+			margin-bottom: 100px;
+		}
+		&__letter{
+			font-size: 180px;
+		}
+		&__text{
+			padding-right: 45px;
+		}
 	}
 }
 .text{

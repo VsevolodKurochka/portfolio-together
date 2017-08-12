@@ -1,0 +1,205 @@
+.monitor{
+	@include pos(relative);
+	width: 270px;
+	font-size: 0;
+	top: 19px;
+	&__area{
+		@include pos(absolute);
+		left: 12px;
+		top: 11px;
+		width: 246px;
+		height: 141px;
+	}
+	&__header{
+		@include pos(absolute);
+		left: 0;
+		top: 0;
+		width: 100%;
+		padding: 5px 10px;
+		background-color: $monitor-ui;
+		font-size: 0;
+		z-index: z('default');
+		&-act{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 7.5px;
+			@include size(8px);
+			border-radius: 50%;
+			@each $act-name, $act-color in $monitor-acts-list{
+				&_#{$act-name}{
+					background-color: $act-color;
+				}
+			}
+		}
+	}
+	&__body{
+		@include pos(absolute);
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: 20px;
+		font-size: 10px;
+		color: $monitor-ui;
+		&:before{
+			@include pseudo();
+			left: 15px;
+			top: 0;
+			height: 100%;
+			width: 1px;
+			background-color: $monitor-ui;
+		}
+	}
+	&__list{
+		list-style: none;
+	}
+	&__number{
+		min-width: 15px;
+		text-align: center;
+	}
+	&__number,
+	&__code{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&__title{
+		margin-top: 0;
+		margin-bottom: 0;
+		&-small{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		&-wrap{
+			position: absolute;
+			left: 0;
+		}
+	}
+	&__code{
+		@each $code-name, $code-color in $monitor-syntax-highlighting{
+			&_#{$code-name}{
+				color: $code-color;
+			}
+		}
+		&_indent{
+			&-1{
+				padding-left: 5px;
+			}
+			&-3{
+				padding-left: 15px;
+			}
+			&-5{
+				padding-left: 25px;
+			}
+			@include resp-min(xs){
+				&-1{
+					padding-left: 15px;
+				}
+				&-3{
+					padding-left: 45px;
+				}
+				&-5{
+					padding-left: 75px;
+				}
+			}
+		}
+	}
+	&__part{
+		&-2{
+			color: #ccc;
+		}
+	}
+	@include resp-min(xs){
+		width: 420px;
+		&__area{
+			left: 19px;
+			top: 18px;
+			width: 382px;
+			height: 219px;
+		}
+		&__body{
+			font-size: 14px;
+			&:before{
+				left: 30px;
+			}
+		}
+		&__number{
+			min-width: 30px;
+		}
+	}
+	@include resp-max(sm){
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include resp-min(sm){
+		width: 720px;
+		top: 65px;
+		&__header{
+			&-act{
+				margin-right: 10px;
+				@include size(12px);
+			}
+		}
+		&__number{
+			font-size: 20px;
+		}
+		&__area{
+			width: 656px;
+			height: 376px;
+			left: 32px;
+			top: 30px;
+		}
+		&__body{
+			font-size: 25px;
+			padding-top: 30px;
+		}
+	}
+	@include resp-max(lg){
+		&__title{
+			&-wrap{
+				width: 100%;
+				padding-right: 15px;
+				text-align: right;
+			}
+		}
+	}
+	@include resp-min(md){
+		width: 920px;
+		&__area{
+			left: 41px;
+			top: 38px;
+			width: 838px;
+			height: 480px;
+		}
+		&__header{
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		&__body{
+			padding-top: 45px;
+			font-size: 20px;
+		}
+		&__code{
+			font-size: 30px;
+		}
+	}
+	@include resp-min(lg){
+		&__title{
+			&-wrap{
+				left: 400px;
+			}
+		}
+		&__part{
+			&-2{
+				color: setColor('white');
+			}
+		}
+	}
+	@media (min-width: 1400px){
+		&__title{
+			font-size: 140px;
+			&-wrap{
+				left: 215px;
+			}
+		}
+	}
+}
