@@ -1,0 +1,28 @@
+mixin connect-link(src)
+	link(href=src rel="stylesheet")
+mixin connect-script(src)
+	script(src=src)
+mixin add-meta(name, value)
+	if name === 'title'
+		title=value
+		meta(property="og:title" content=value)
+	else if name === 'description'
+		meta(property="description" content=value)
+		meta(property="og:description" content=value)
+mixin menu-item(isLink,href, name)
+	li(class="vnav__menu-item")
+		if isLink === 'true'
+			a.anchor( href=href )
+				.vnav__menu-item-icon-wrap
+					svg.vnav__menu-item-icon(version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 502.6 502.6"  xml:space="preserve")
+						g
+							g
+								path(d="M251.3,237.6c37.2,0,67-30,67-67c0-37-29.9-67-67-67c-36.9,0-66.9,30-66.9,67C184.4,207.6,214.3,237.6,251.3,237.6z")
+								path(d="M305,248.5H197.7c-19.2,0-34.9,17.6-34.9,39.2v107.9c0,1.2,0.6,2.2,0.7,3.5h175.8c0.1-1.2,0.6-2.3,0.6-3.5V287.7 C339.9,266.1,324.2,248.5,305,248.5z")
+								path(d="M431.6,269.6c29.8,0,53.8-24,53.8-53.7s-23.9-53.7-53.8-53.7c-29.6,0-53.6,24.1-53.6,53.7C377.9,245.5,402,269.6,431.6,269.6z")
+								path(d="M474.7,278.3h-86c-15.4,0-28.1,14.1-28.1,31.5v86.4c0,0.9,0.5,1.8,0.5,2.8h141c0.1-1,0.5-1.9,0.5-2.8v-86.4C502.7,292.4,490.1,278.3,474.7,278.3z")
+								path(d="M71,269.6c29.8,0,53.7-24,53.7-53.7s-23.9-53.7-53.7-53.7c-29.6,0-53.6,24.1-53.6,53.7S41.4,269.6,71,269.6L71,269.6z")
+								path(d="M114.1,278.3H28c-15.4,0-28,14.1-28,31.5v86.4c0,0.9,0.5,1.8,0.5,2.8h141c0.1-1,0.5-1.9,0.5-2.8v-86.4C142.1,292.4,129.5,278.3,114.1,278.3z")
+				span.vnav__menu-item-text=name
+		else
+			block

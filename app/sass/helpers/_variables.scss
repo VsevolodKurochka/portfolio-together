@@ -1,0 +1,30 @@
+// Colors
+
+	$color-modal-main: #F89406;
+	$color-modal-transparent: rgba(0, 0, 0, 0.1);
+	$color-success: #5cb85c;
+	$color-danger: #d9534f;
+
+	// Brand colors
+
+		$color-brand-1: #f24d16;
+		$color-brand-2: #f00;
+
+
+	// Navigation
+
+		$color-menu: #f7f7f7;
+		$color-item: #929292;
+		$color-active-item: #f24d16;
+
+// Dependencies
+
+	// Design form ( 'old' or 'new' )
+	
+		$design-form: 'old';
+
+// Errors
+
+	// If not exists variable.
+		$error-variable: "This variable we do not have, sorry. Please try to change variable ";
+		$error-color: 'Invalid color name.';

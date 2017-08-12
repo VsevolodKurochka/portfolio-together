@@ -1,0 +1,74 @@
+.vnav{
+	overflow: hidden;
+	@if ( getComp(menuExists) == true ){
+		padding: 7.5px 0;
+		background-color: setColor('menu');
+		border-top: 1px solid #b2b2b2;
+		@at-root{
+			%vnav-transition{
+				@include transition();
+			}
+		}
+		&__menu{
+			//text-align: center;
+			//font-size: 0;
+			&-item{
+				display: block;
+				padding: 5px;
+				//border-left: 1px solid #e5e5e5;
+				text-align: center;
+				font-size: 14px;
+				@extend %vnav-transition;
+				// &:last-child{
+				// 	border-right: 1px solid #e5e5e5;
+				// }
+				a{
+					display: block;
+					position: relative;
+					color: inherit;
+					text-decoration: none;
+				}
+				&-text{
+					display: block;
+					color: $color-item;
+					@extend %vnav-transition;
+				}
+				&-icon{
+					display: inline-block;
+					width: 40px;
+					&-wrap{
+						font-size: 0;
+					}
+					path{
+						fill: $color-item;
+						@extend %vnav-transition;
+					}
+				}
+				&:hover &-text,
+				&.active &-text{
+					color: $color-active-item;
+				}
+				&:hover &-icon path,
+				&.active &-icon path{
+					fill: $color-active-item;
+				}
+			}
+		}
+		@include resp-max(sm){
+			&__container{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.fixed{
+	position: fixed;
+	z-index: z('fixed');
+	width: 100%;
+	left: 0;
+	&_bottom{
+		bottom: 0;
+	}
+}

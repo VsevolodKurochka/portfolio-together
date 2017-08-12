@@ -1,0 +1,7 @@
+include ../helpers/data
+include ../helpers/mixins
+include ../bem/index
+nav.vnav__menu#navigation
+	.owl-carousel
+		for item in navigation
+			+menu-item('true', item.link, item.name)
