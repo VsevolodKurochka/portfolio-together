@@ -33,4 +33,26 @@ $(document).ready(function(){
 			}
 		});
 
+	// Our Skills
+		var kitchenBulb = $('.kitchen__bulb');
+
+		$('.kitchen__pan').each(function(){
+			$(this).click(function(){
+				var kitchenSkill = $(this).attr('data-kitchen-skill');
+				var thisKitchenBulb = $(" [data-kitchen-lamp='" + kitchenSkill + "'] ");
+				
+				kitchenBulb.each(function(){
+					$(this).removeClass('active');
+				});
+				thisKitchenBulb.addClass('active');
+				
+				$('.kitchen__pan').not($(this)).removeClass('active');
+				$(this).addClass('active');
+				// $('.kitchen__pan').each(function(){
+				// 	$(this).removeClass('active');
+				// });
+				// $(this).addClass('active');
+			});
+		});
+
 });	

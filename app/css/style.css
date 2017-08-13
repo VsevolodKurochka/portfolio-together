@@ -582,11 +582,27 @@ End:  HIDDEN AND VISIBLE UTILITIES
 
 .vnav__menu-item-icon {
   display: inline-block;
+  height: 30px;
   width: 40px;
 }
 
 .vnav__menu-item-icon-wrap {
   font-size: 0;
+  margin-bottom: 5px;
+  height: 35px;
+}
+
+.vnav__menu-item-icon-wrap:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.vnav__menu-item-icon-wrap svg,
+.vnav__menu-item-icon-wrap img {
+  max-height: 100%;
+  vertical-align: middle;
 }
 
 .vnav__menu-item-icon path {
@@ -1505,6 +1521,23 @@ input[type="checkbox"]:checked + .control__indicator:before {
   }
 }
 
+.kitchen {
+  position: relative;
+  background: url("../img/kitchen.png") center 0 no-repeat;
+  background-size: cover;
+}
+
+.kitchen:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  background: url("../img/kitchen-floor.png") 0 0 no-repeat;
+  background-size: cover;
+}
+
 .kitchen__roof {
   position: relative;
   height: 20px;
@@ -1600,7 +1633,10 @@ input[type="checkbox"]:checked + .control__indicator:before {
 }
 
 .kitchen__lamp {
+  position: relative;
   text-align: center;
+  margin-bottom: 100px;
+  z-index: 3;
 }
 
 .kitchen__lamp-inner {
@@ -1630,6 +1666,30 @@ input[type="checkbox"]:checked + .control__indicator:before {
   fill: none;
 }
 
+.kitchen__lamp_blue .kitchen__lamp-st1 {
+  fill: #264891;
+}
+
+.kitchen__lamp_blue .kitchen__lamp-st2 {
+  fill: #3d73e8;
+}
+
+.kitchen__lamp_blue .kitchen__lamp-st3 {
+  fill: none;
+}
+
+.kitchen__lamp_orange .kitchen__lamp-st1 {
+  fill: #ff5a00;
+}
+
+.kitchen__lamp_orange .kitchen__lamp-st2 {
+  fill: #ff9563;
+}
+
+.kitchen__lamp_orange .kitchen__lamp-st3 {
+  fill: none;
+}
+
 .kitchen__bulb {
   position: absolute;
   width: 51px;
@@ -1638,12 +1698,173 @@ input[type="checkbox"]:checked + .control__indicator:before {
           transform: scaleY(-1);
 }
 
+.kitchen__bulb:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 50px;
+  height: 80px;
+  -webkit-transform: perspective(120px) rotateX(145deg);
+          transform: perspective(120px) rotateX(145deg);
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 222, 83, 0.8)), to(transparent));
+  background: -webkit-linear-gradient(bottom, rgba(255, 222, 83, 0.8), transparent);
+  background: linear-gradient(to top, rgba(255, 222, 83, 0.8), transparent);
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
 .kitchen__bulb svg {
   width: 100%;
 }
 
+.kitchen__bulb.active:before {
+  opacity: 1;
+}
+
 .kitchen__bulb.active path {
   fill: #FFDA44;
+}
+
+.kitchen__table {
+  position: relative;
+  text-align: center;
+  font-size: 0;
+}
+
+.kitchen__table-img {
+  max-width: 320px;
+}
+
+.kitchen__pan {
+  position: absolute;
+}
+
+.kitchen__pan-header {
+  margin-bottom: 7.5px;
+}
+
+.kitchen__pan-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 5px 15px;
+  background-color: #fff;
+  color: #000;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.kitchen__pan-cover {
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.kitchen__pan-cover-st0 {
+  fill: #F4C44E;
+}
+
+.kitchen__pan-cover-st1 {
+  fill: #FFFFFF;
+}
+
+.kitchen__pan_yellow .kitchen__pan-cover-st0 {
+  fill: #ede786;
+}
+
+.kitchen__pan_yellow .kitchen__pan-plate path {
+  fill: #ede786;
+}
+
+.kitchen__pan_blue .kitchen__pan-cover-st0 {
+  fill: #1d7df3;
+}
+
+.kitchen__pan_blue .kitchen__pan-plate path {
+  fill: #1d7df3;
+}
+
+.kitchen__pan_pink .kitchen__pan-cover-st0 {
+  fill: #b755ef;
+}
+
+.kitchen__pan_pink .kitchen__pan-plate path {
+  fill: #b755ef;
+}
+
+.kitchen__pan_purple .kitchen__pan-cover-st0 {
+  fill: #79147f;
+}
+
+.kitchen__pan_purple .kitchen__pan-plate path {
+  fill: #79147f;
+}
+
+.kitchen__pan_lime .kitchen__pan-cover-st0 {
+  fill: #1df3a0;
+}
+
+.kitchen__pan_lime .kitchen__pan-plate path {
+  fill: #1df3a0;
+}
+
+.kitchen__pan_light-blue .kitchen__pan-cover-st0 {
+  fill: #55b7ef;
+}
+
+.kitchen__pan_light-blue .kitchen__pan-plate path {
+  fill: #55b7ef;
+}
+
+.kitchen__pan_red .kitchen__pan-cover-st0 {
+  fill: #e1411c;
+}
+
+.kitchen__pan_red .kitchen__pan-plate path {
+  fill: #e1411c;
+}
+
+.kitchen__pan_turquoise .kitchen__pan-cover-st0 {
+  fill: #48efe9;
+}
+
+.kitchen__pan_turquoise .kitchen__pan-plate path {
+  fill: #48efe9;
+}
+
+.kitchen__pan_lemon .kitchen__pan-cover-st0 {
+  fill: #beea27;
+}
+
+.kitchen__pan_lemon .kitchen__pan-plate path {
+  fill: #beea27;
+}
+
+.kitchen__pan.active .kitchen__pan-cover {
+  -webkit-transform: translateY(-45px);
+      -ms-transform: translateY(-45px);
+          transform: translateY(-45px);
+}
+
+.kitchen__pan.active .kitchen__pan-title {
+  opacity: 1;
 }
 
 @media (min-width: 1025px) {
@@ -1652,12 +1873,27 @@ input[type="checkbox"]:checked + .control__indicator:before {
     left: 5px;
   }
   .kitchen__bulb_2 {
+    top: 180px;
+    left: 133px;
+  }
+  .kitchen__bulb_3 {
     top: 248px;
     left: 75px;
   }
-  .kitchen__bulb_3 {
-    left: 133px;
-    top: 180px;
+  .kitchen__pan {
+    width: 110px;
+  }
+  .kitchen__pan_1 {
+    left: 55px;
+    top: -15px;
+  }
+  .kitchen__pan_2 {
+    left: 185px;
+    top: -15px;
+  }
+  .kitchen__pan_3 {
+    left: 125px;
+    top: 25px;
   }
 }
 

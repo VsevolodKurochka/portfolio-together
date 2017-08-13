@@ -1,4 +1,23 @@
 .kitchen{
+	@include pos(relative);
+	@include bg('../img/kitchen.png', center 0);
+	// &:after{
+	// 	@include pseudo();
+	// 	left: 0;
+	// 	top: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background-color: transparentize(setColor('dark', 'black'), 0.25);
+	// 	z-index: 2;
+	// }
+	&:before{
+		@include pseudo();
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 75px;
+		@include bg('../img/kitchen-floor.png');
+	}
 	&__roof{
 		@include pos(relative);
 		height: 20px;
@@ -63,7 +82,10 @@
 		}
 	}
 	&__lamp{
+		position: relative;
 		text-align: center;
+		margin-bottom: 100px;
+		z-index: 3;
 		&-inner{
 			@include pos(relative);
 			display: inline-block;
@@ -77,24 +99,100 @@
 			width: 200px;
 		}
 	}
-	&__lamp_purple &__lamp-st1{
-		fill: #92278F;
-	}
-	&__lamp_purple &__lamp-st2{
-		fill: #7A1878;
-	}
-	&__lamp_purple &__lamp-st3{
-		fill: none;
+	@each $name, $value in $color-lamp{
+		@for $i from  1 through length($value){
+			&__lamp_#{$name} &__lamp-st#{$i}{
+				fill: nth(nth($value, $i), 2);
+			}
+		}
 	}
 	&__bulb{
 		position: absolute;
 		width: 51px;
 		transform: scaleY(-1);
+		&:before{
+			@include pseudo();
+			left: 0;
+			top: 30px;
+			width: 50px;
+			height: 80px;
+			transform: perspective(120px) rotateX(145deg);
+			transform-origin: top center;
+			background: linear-gradient(to top, rgba(255, 222, 83, 0.8), transparent);
+			z-index: -1;
+			opacity: 0;
+			@include transition();
+		}
 		svg{
 			width: 100%;
 		}
-		&.active path{
-			fill: #FFDA44;
+		&.active{
+			&:before{
+				opacity: 1;
+			}
+			path{
+				fill: #FFDA44;
+			}
+		}
+	}
+	&__table{
+		@include pos(relative);
+		text-align: center;
+		font-size: 0;
+		&-img{
+			max-width: 320px;
+		}
+	}
+	&__pan{
+		position: absolute;
+		&-header{
+			margin-bottom: 7.5px;
+		}
+		&-title{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			padding: 5px 15px;
+			background-color: #fff;
+			color: #000;
+			font-size: 25px;
+			font-weight: bold;
+			line-height: 1;
+			opacity: 0;
+			transform: translate(-50%, -50%);
+			@include transition();
+		}
+		&-cover{
+			position: relative;
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			z-index: z('default') + 1;
+			@include transition();
+			&-st0{
+				fill:#F4C44E;
+			}
+			&-st1{
+				fill:#FFFFFF;
+			}
+		}
+		@each $name, $color in $color-plates{
+			&_#{$name} &-cover-st0{
+				fill: $color;
+			}
+			&_#{$name} &-plate path{
+				fill: $color;
+			}
+			// &_#{$name} &-title{
+			// 	color: $color;
+			// }
+		}
+		&.active &-cover{
+			transform: translateY(-45px);
+		}
+
+		&.active &-title{
+			opacity: 1;
 		}
 	}
 	@include resp-min(md){
@@ -104,12 +202,27 @@
 				left: 5px;
 			}
 			&_2{
+				top: 180px;
+				left: 133px;
+			}
+			&_3{
 				top: 248px;
 				left: 75px;
 			}
+		}
+		&__pan{
+			width: 110px;
+			&_1{
+				left: 55px;
+				top: -15px;
+			}
+			&_2{
+				left: 185px;
+				top: -15px;
+			}
 			&_3{
-				left: 133px;
-				top: 180px;
+				left: 125px;
+				top: 25px;
 			}
 		}
 	}

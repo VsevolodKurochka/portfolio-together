@@ -59,6 +59,36 @@
 
 			$color-roof: #fffc00;
 			$color-roof-part: #000;
+			
+			$color-lamp: (
+				'purple' 	: (
+					'st1'  	: #92278F,
+					'st2'	 	: #7A1878,
+					'st3'  	: none
+				),
+				'blue'		: (
+					'st1'  	: #264891,
+					'st2'	 	: #3d73e8,
+					'st3'  	: none	
+				),
+				'orange'		: (
+					'st1'  	: #ff5a00,
+					'st2'	 	: #ff9563,
+					'st3'  	: none	
+				)
+			);
+
+			$color-plates: (
+				'yellow' 				: #ede786,
+				'blue'	 				: #1d7df3,
+				'pink' 					: #b755ef,
+				'purple' 				: #79147f,
+				'lime'    			: #1df3a0,
+				'light-blue' 		: #55b7ef,
+				'red'     			: #e1411c,
+				'turquoise'			: #48efe9,
+				'lemon'					: #beea27
+			);
 
 // Dependencies
 

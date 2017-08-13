@@ -35,9 +35,12 @@
 				}
 				&-icon{
 					display: inline-block;
+					height: 30px;
 					width: 40px;
 					&-wrap{
 						font-size: 0;
+						margin-bottom: 5px;
+						@include vertical-image(35px);
 					}
 					path{
 						fill: $color-item;

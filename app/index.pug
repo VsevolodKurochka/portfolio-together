@@ -1,7 +1,9 @@
 extends includes/layout
+
 block variables
 	- var title = "Kitchen Of Design";
 	- var description = "Kitchen Of Design";
+	include includes/helpers/data
 block content
 	+b.SECTION.about-us.vsection#section-about-us
 		+e.part._man
@@ -36,8 +38,11 @@ block content
 							+e.P.description I really like nature, elegant food and delicious design.
 	+b.SECTION.skills.vsection#section-skills
 		.vcontainer
-			+b.group
-				+e.H3.title <span class="group__letter group__letter_blue" data-letter="O">O</span>ur Skillsss
+			.vrow
+				.vak.xs-12.sm-6
+					+b.group
+						+e.H3.title <span class="group__letter group__letter_blue" data-letter="O">O</span>ur Skillsss
+						+e.P.text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
 		+b.kitchen
 			+e.roof
 				+e.roof-part._1
@@ -48,16 +53,8 @@ block content
 					+e.roof-part-inner._big
 			.vcontainer
 				.vrow
-					+e.item.vak.xs-12.sm-4
-						+e.lamp._purple
-							+e.lamp-inner
-								+kitchen-lamp()
-								+e.bulb._1
-									+kitchen-bulb()
-								+e.bulb._2
-									+kitchen-bulb()
-								+e.bulb._3
-									+kitchen-bulb()
+					for kitchenBlock in kitchenTables
+						+kitchen-block(kitchenBlock.skill1, kitchenBlock.skill2, kitchenBlock.skill3, kitchenBlock.lampColor)
 block footer
 
 block dev

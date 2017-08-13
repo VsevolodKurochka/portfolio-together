@@ -3,7 +3,7 @@
 /// @param {String} $color - color name 
 /// @return {String}
 /// @require $colors
-@function setColor($color, $tone: 'base'){
+@function setColor($color, $tone: 'base', $colors: $colors){
   @if map-has-key($colors, $color){
   	@return map-get(map-get($colors, $color), $tone);
   }@else{
