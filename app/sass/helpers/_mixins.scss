@@ -172,5 +172,9 @@
 }
 
 @mixin pos($p){
-  position: $p;
+  @if $p == 'r'{
+    position: relative;
+  }@else if $p == 'a'{
+    position: absolute;
+  }
 }

@@ -1,29 +1,25 @@
+.skills{
+	padding-bottom: 0;
+}
 .kitchen{
-	@include pos(relative);
+	@include pos(r);
 	@include bg('../img/kitchen.png', center 0);
-	// &:after{
-	// 	@include pseudo();
-	// 	left: 0;
-	// 	top: 0;
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	background-color: transparentize(setColor('dark', 'black'), 0.25);
-	// 	z-index: 2;
-	// }
-	&:before{
+	&:after{
 		@include pseudo();
 		left: 0;
-		bottom: 0;
+		top: 0;
 		width: 100%;
-		height: 75px;
-		@include bg('../img/kitchen-floor.png');
+		height: 100%;
+		background-color: transparentize(setColor('dark', 'black'), 0.25);
+		z-index: z('default') + 1;
 	}
+	
 	&__roof{
-		@include pos(relative);
-		height: 20px;
+		@include pos(r);
+		height: 26px;
 		width: 100%;
 		font-size: 0;
-		z-index: z('default') + 1;
+		z-index: z('default');
 		&:before{
 			@include pseudo();
 			left: 50%;
@@ -66,10 +62,13 @@
 				flex-direction: row-reverse;
 			}
 		}
+		&-wrap{
+			display: none;
+		}
 		@include resp-min(sm){
-			height: 42px;
+			height: 45px;
 			&:before{
-				height: 42px;
+				height: 45px;
 			}
 			&-part{
 				padding-left: 15px;
@@ -85,9 +84,9 @@
 		position: relative;
 		text-align: center;
 		margin-bottom: 100px;
-		z-index: 3;
+		z-index: 4;
 		&-inner{
-			@include pos(relative);
+			@include pos(r);
 			display: inline-block;
 			font-size: 0;
 		}
@@ -126,6 +125,18 @@
 		svg{
 			width: 100%;
 		}
+		&_1{
+			top: 202px;
+			left: 5px;
+		}
+		&_2{
+			top: 180px;
+			left: 133px;
+		}
+		&_3{
+			top: 248px;
+			left: 75px;
+		}
 		&.active{
 			&:before{
 				opacity: 1;
@@ -136,7 +147,7 @@
 		}
 	}
 	&__table{
-		@include pos(relative);
+		@include pos(r);
 		text-align: center;
 		font-size: 0;
 		&-img{
@@ -145,6 +156,20 @@
 	}
 	&__pan{
 		position: absolute;
+		width: 90px;
+		z-index: 3;
+		&_1{
+			left: 20px;
+			top: -10px;
+		}
+		&_2{
+			left: 146px;
+			top: -10px;
+		}
+		&_3{
+			left: 90px;
+			top: 25px;
+		}
 		&-header{
 			margin-bottom: 7.5px;
 		}
@@ -170,17 +195,20 @@
 			z-index: z('default') + 1;
 			@include transition();
 			&-st0{
-				fill:#F4C44E;
+				fill: #383838;
 			}
 			&-st1{
-				fill:#FFFFFF;
+				fill: #484848;
 			}
 		}
+		&-plate path{
+			fill: #272727;
+		}
 		@each $name, $color in $color-plates{
-			&_#{$name} &-cover-st0{
+			&_#{$name}.active &-cover-st0{
 				fill: $color;
 			}
-			&_#{$name} &-plate path{
+			&_#{$name}.active &-plate path{
 				fill: $color;
 			}
 			// &_#{$name} &-title{
@@ -189,27 +217,88 @@
 		}
 		&.active &-cover{
 			transform: translateY(-45px);
+			&-st1{
+				fill: setColor('white');
+			}
 		}
-
 		&.active &-title{
 			opacity: 1;
 		}
 	}
-	@include resp-min(md){
-		&__bulb{
-			&_1{
-				top: 202px;
-				left: 5px;
-			}
-			&_2{
-				top: 180px;
-				left: 133px;
-			}
-			&_3{
-				top: 248px;
-				left: 75px;
+	&__item{
+		&-roof{
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+	}
+	@include resp-max(sm){
+		&__table{
+			width: 270px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__item{
+			position: relative;
+			&:before{
+				@include pseudo();
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 75px;
+				@include bg('../img/kitchen-floor.png');
 			}
 		}
+	}
+	@include resp-min(sm){
+		&__roof{
+			&-wrap{
+				display: block;
+			}
+		}
+		&__item{
+			&-roof{
+				display: none;
+			}
+		}
+		&__pan{
+			width: 80px;
+			&_1{
+				left: 15px;
+				top: -10px;
+			}
+			&_2{
+				left: 120px;
+				top: -10px;
+			}
+			&_3{
+				left: 75px;
+				top: 15px;
+			}
+		}
+		&:before{
+			@include pseudo();
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 75px;
+			@include bg('../img/kitchen-floor.png');
+		}
+	}
+	@include resp-min(md){
+		&__pan{
+			&_1{
+				left: 35px;
+			}
+			&_2{
+				left: 165px;
+			}
+			&_3{
+				left: 107px;
+				top: 35px;
+			}
+		}
+	}
+	@include resp-min(lg){
 		&__pan{
 			width: 110px;
 			&_1{

@@ -1,20 +1,17 @@
 @mixin input-default(){
 	display: block;
-	padding: 15px;
 	width: 100%;
 	max-width: 100%;
 	color: #000;
 	text-align: left;
 	font-size: 15px;
+	font-weight: bold;
 	-webkit-appearance: none;
 	outline: none;
 	@include transition();
+	@extend .general-font;
 	@include placeholder{
-		@include transition();
+		@include transition(all, ease, 1.5s);
 	}
-	&:focus{
-		@include placeholder{
-			color: transparent;
-		}
-	}
+	
 }

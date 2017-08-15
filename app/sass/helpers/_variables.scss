@@ -90,11 +90,25 @@
 				'lemon'					: #beea27
 			);
 
+		// Get in touch
+
+			$bg-contact: #00a8ec;
+
+			// Social item
+				$social-item-size: 60px;
+				$social-item-bg: #0669b2;
+
+				$social-palitre: (
+					'fb'					: #0669b2,
+					'instagram'		: #0669b2,
+					'vk'					: #0669b2
+				);
+
 // Dependencies
 
 	// Design form ( 'old' or 'new' )
 	
-		$design-form: 'old';
+		$design-form: 'new';
 
 // Errors
 

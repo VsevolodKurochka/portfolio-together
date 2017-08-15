@@ -1,0 +1,85 @@
+.contact{
+	background-color: $bg-contact;
+	&__title{
+		color: setColor('white');
+	}
+	&__icons{
+		margin-bottom: 45px;
+	}
+	&__social{
+		&-title{
+			margin-bottom: 30px;
+			font-size: 35px;
+			color: setColor('yellow');
+			font-weight: bold;
+		}
+	}
+	@include resp-min(sm){
+		&__information{
+			padding-left: 45px;
+		}
+	}
+}
+.icon{
+	&:not(:last-child){
+		margin-bottom: 45px;
+	}
+	&__header{
+		font-size: 0;
+		margin-bottom: 10px;
+	}
+	&__img{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		opacity: 0.7;
+		@include transition();
+
+		&-wrap{
+			width: 100px;
+			text-align: center;
+		}
+	}
+	&:hover &__img{
+		opacity: 1;
+	}
+	&__body{
+		color: setColor('white');
+	}
+	&__text{
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		font-weight: bold;
+	}
+	@include resp-min(sm){
+		&__text{
+			font-size: 22px;
+		}
+	}
+}
+.social{
+	font-size: 0;
+	&__item{
+		@include pos(r);
+		display: inline-block;
+		@include size($social-item-size);
+		border-radius: 50%;
+		@include transition();
+		@each $social-name, $social-color in $social-palitre{
+			&_#{$social-name}:hover{
+				background-color: $social-color;
+			}
+		}
+		&:not(:last-child){
+			margin-right: 20px;
+		}
+		&-icon{
+			height: 30px;
+			@include pos(a);
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+}

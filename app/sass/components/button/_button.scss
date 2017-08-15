@@ -27,35 +27,23 @@
     width: 100%;
     text-align: center;
   }
-  &_shadow{
-    &-brand-1{
-      box-shadow: 0 3px 8px 1px transparentize(setColor('brand-1'), 0.5);
-    }
-    &:hover{
-      box-shadow: none;
-    }
-  }
-  &_navigation{
-    background-color: setColor('menu', 'light');
-    @include resp-max(md){
-      padding: 15px;
-      width: 100%;
-      font-size: 18px;
-      text-align: left;
-    }
-    @include resp-min(md){
-      background-color: setColor('brand-1');
-    }
-  }
-  @each $name, $values in $button-colors{
-    $button-bg: nth($values, 1);
-    $button-color: nth($values, 2);
-    &_#{$name}{
-      @include button-color($button-bg, $button-color);
-      &-simple{
-        &:hover{
-          background-color: darken($button-bg, 15%);
+  @each $button-name, $button-collect-values in $button-colors{
+
+    &_#{$button-name}{
+      @each $button-value-name, $button-value in $button-collect-values{
+        
+        @if ($button-value-name == 'before'){
+          
+          &:before{
+            background-color: $button-value;
+          }
+          $button-value-name: null;
+          $button-value: null;
+        }@else if ( $button-value-name == 'border-color' ){
+          border-width: $btn-border-width;
+          border-style: $btn-border-style;
         }
+        #{$button-value-name}: $button-value;
       }
     }
   }

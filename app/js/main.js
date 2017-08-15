@@ -35,23 +35,23 @@ $(document).ready(function(){
 
 	// Our Skills
 		var kitchenBulb = $('.kitchen__bulb');
-
+		var kitchenPan = $('.kitchen__pan');
+		function kitchenRemoveCLass(el){
+			el.each(function(){
+				$(this).removeClass('active');
+			});
+		}
 		$('.kitchen__pan').each(function(){
 			$(this).click(function(){
-				var kitchenSkill = $(this).attr('data-kitchen-skill');
-				var thisKitchenBulb = $(" [data-kitchen-lamp='" + kitchenSkill + "'] ");
+				var panAttr = $(this).attr('data-kitchen-skill');
+				var bulbWithPanAttr = $(" [data-kitchen-lamp='" + panAttr + "'] ");
+
+				kitchenRemoveCLass(kitchenBulb);
+				kitchenRemoveCLass(kitchenPan);
+
+				bulbWithPanAttr.addClass('active');
 				
-				kitchenBulb.each(function(){
-					$(this).removeClass('active');
-				});
-				thisKitchenBulb.addClass('active');
-				
-				$('.kitchen__pan').not($(this)).removeClass('active');
 				$(this).addClass('active');
-				// $('.kitchen__pan').each(function(){
-				// 	$(this).removeClass('active');
-				// });
-				// $(this).addClass('active');
 			});
 		});
 

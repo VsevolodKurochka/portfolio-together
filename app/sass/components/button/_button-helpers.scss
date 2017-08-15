@@ -8,17 +8,29 @@ $button-map: (
 
 //-
 //- Button colors
-//-
+//- 1 key - background
+//- 2 key - text color
+//- 3 key - border color
 
-// 1. 1 key - background
-// 2. 2 key - text color
 $button-colors: (
-	'white'				: ( setColor('white'), setColor('brand-1') ),
-	'green'				: ( setColor('green'), setColor('white') ),
-	'brand-1'			: ( setColor('brand-1'), setColor('white') )
+	// 'white'							: ( setColor('white'), setColor('brand-1') ),
+	// 'green'							: ( setColor('green'), setColor('white') ),
+	// 'brand-1'						: ( setColor('brand-1'), setColor('white') ),
+	// 'border-yellow'			: ( transparent, setColor('white'), setColor('yellow') ),
+	'border-yellow' : (
+		'background-color': transparent,
+		'color': setColor('white'),
+		'border-color': setColor('yellow'),
+		'before': setColor('yellow')
+	)
 );
 
-// Button sizes
+//-
+//- Button Sizes
+//-
+
+$btn-border-width: 3px;
+$btn-border-style: solid;
 
 $btn-default-padding: 10px 16px;
 $btn-default-size: 14px;
@@ -29,12 +41,4 @@ $btn-large-size: 18px;
 @mixin button-size($button-padding, $button-font-size){
 	padding: $button-padding;
 	font-size: $button-font-size;
-}
-
-@mixin button-color($button-background, $button-color){
-	background-color: $button-background;
-	color: $button-color;
-	&:before{
-		background-color: darken($button-background, 5%);
-	}
 }

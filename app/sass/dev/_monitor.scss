@@ -1,17 +1,17 @@
 .monitor{
-	@include pos(relative);
+	@include pos(r);
 	width: 270px;
 	font-size: 0;
 	top: 19px;
 	&__area{
-		@include pos(absolute);
+		@include pos(a);
 		left: 12px;
 		top: 11px;
 		width: 246px;
 		height: 141px;
 	}
 	&__header{
-		@include pos(absolute);
+		@include pos(a);
 		left: 0;
 		top: 0;
 		width: 100%;
@@ -33,7 +33,7 @@
 		}
 	}
 	&__body{
-		@include pos(absolute);
+		@include pos(a);
 		left: 0;
 		top: 0;
 		width: 100%;

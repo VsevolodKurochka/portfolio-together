@@ -15,7 +15,6 @@
 @import 'layouts/nav/nav-item';
 
 @import 'layouts/header';
-@import 'layouts/footer';
 
 @import 'components/classes';
 
@@ -31,7 +30,11 @@
 @import 'components/collapse';
 
 @import 'parts/sections/about-us';
-@import 'parts/sections/skills';
+@import 'parts/sections/skills/skills';
+@import 'parts/sections/portfolio';
+@import 'parts/sections/blog';
+@import 'parts/sections/contact';
+@import 'parts/sections/copyright';
 
 @import "dev/loader";
 @import "dev/text";

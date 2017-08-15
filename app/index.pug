@@ -42,19 +42,69 @@ block content
 				.vak.xs-12.sm-6
 					+b.group
 						+e.H3.title <span class="group__letter group__letter_blue" data-letter="O">O</span>ur Skillsss
-						+e.P.text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						+e.P.text This section is made in the form of a game. When you click on the pot, the skill that we own is shown. Have a good mood!
 		+b.kitchen
-			+e.roof
-				+e.roof-part._1
-					+e.roof-part-inner
-					+e.roof-part-inner._big
-				+e.roof-part._2._reverse
-					+e.roof-part-inner
-					+e.roof-part-inner._big
+			+e.roof-wrap
+				+kitchen-roof()
 			.vcontainer
 				.vrow
 					for kitchenBlock in kitchenTables
 						+kitchen-block(kitchenBlock.skill1, kitchenBlock.skill2, kitchenBlock.skill3, kitchenBlock.lampColor)
+	+b.SECTION.contact.vsection#section-skills
+		.vcontainer
+			+b.group
+				+e.H3.title.contact__title <span class="group__letter group__letter_yellow" data-letter="G">G</span>et in touchhh
+			.vrow
+				.vak.xs-12.sm-6
+					+e.information
+						+e.icons
+							+b.icon
+								+e.header
+									+e.img-wrap
+										+e.IMG.img(src="img/paper-airplane-flying.svg")
+								+e.body
+									+e.A.text(href="mailto: alinayaremachenko@gmail.com") alinayaremachenko@gmail.com
+							+b.icon
+								+e.header
+									+e.img-wrap
+										+e.IMG.img(src="img/smartphone.svg")
+								+e.body
+									+e.A.text(href="tel: + 38 (093)-964-94-91") + 38 (093)-964-94-91
+							+b.icon
+								+e.header
+									+e.img-wrap
+										+e.IMG.img(src="img/skype.svg")
+								+e.body
+									+e.A.text(href="tel: alina.yaremachenko") alina.yaremachenko
+						+e.social
+							+e.P.social-title Find Us:
+							+b.social
+								+e.A.item._fb(href="#")
+									+e.item-icon(src="img/facebook-letter-logo.svg")
+								+e.A.item._instagram(href="#")
+									+e.item-icon(src="img/instagram-logo.svg")
+								+e.A.item._vk(href="#")
+									+e.item-icon(src="img/vk-social-network-logo.svg")
+				.vak.xs-12.sm-6
+					+b.FORM.vform._white(action="application.php" method="POST")
+						+e.line-y
+							+e.line-y-part
+						+e.row._line
+							+b.INPUT.vform-control(type="text" placeholder="Fullname" data-rule="required noNumbers" name="name")
+							+e.line
+						+e.row._line
+							+b.INPUT.vform-control(type="email" placeholder="Email" data-rule="required email" name="email")
+							+e.line
+						+e.row._line
+							+b.INPUT.vform-control(type="text" placeholder="Phone" data-rule="required" name="phone")
+							+e.line
+						+e.row._line
+							+b.TEXTAREA.vform-control(placeholder="How Can We Help You ?" rows="5")
+							+e.line
+						+e.row.text-center
+							+e.BUTTON.button.vbtn._large._border-yellow.effect._bounce-top(type="submit") SEND
+	+b.copyright
+		p © Copyright 2017 | Developed by KOD
 block footer
 
 block dev
