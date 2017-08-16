@@ -1,25 +1,6 @@
 .vform{
 	position: relative;
 	width: 100%;
-	@at-root{
-		@keyframes formShake {
-		  10%, 90% {
-		    transform: translate3d(-1px, 0, 0);
-		  }
-		  
-		  20%, 80% {
-		    transform: translate3d(2px, 0, 0);
-		  }
-
-		  30%, 50%, 70% {
-		    transform: translate3d(-4px, 0, 0);
-		  }
-
-		  40%, 60% {
-		    transform: translate3d(4px, 0, 0);
-		  }
-		}
-	}
 	&__row{
 		position: relative;
 		margin-top: 15px;
@@ -65,14 +46,16 @@
 	&__line-y{
 		position: absolute;
 		left: -5px;
-		top: -100px;
+		top: 0;
 		width: 5px;
-		height: 140%;
+		height: 100%;
 		background-color: setColor('white');
+		//top: -100px;
+		//height: 140%;
 	}
 	&_error{
 		[type="submit"]{
-		  animation: formShake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+		  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 		  transform: translate3d(0, 0, 0);
 		  backface-visibility: hidden;
 		  perspective: 1000px;

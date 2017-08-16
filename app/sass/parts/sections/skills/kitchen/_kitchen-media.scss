@@ -1,0 +1,86 @@
+.#{$skill-name-game}{
+	@include resp-max(sm){
+		&__table{
+			width: 270px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__item{
+			position: relative;
+			&:before{
+				@include pseudo();
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 75px;
+				@include bg('../img/kitchen-floor.png');
+			}
+		}
+	}
+	@include resp-min(sm){
+		&__roof{
+			&-wrap{
+				display: block;
+			}
+		}
+		&__item{
+			&-roof{
+				display: none;
+			}
+		}
+		&__pan{
+			width: 80px;
+			&_1{
+				left: 15px;
+				top: -10px;
+			}
+			&_2{
+				left: 120px;
+				top: -10px;
+			}
+			&_3{
+				left: 75px;
+				top: 15px;
+			}
+		}
+		&:before{
+			@include pseudo();
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 75px;
+			@include bg('../img/kitchen-floor.png');
+		}
+	}
+	@include resp-min(md){
+		&__pan{
+			&_1{
+				left: 35px;
+			}
+			&_2{
+				left: 165px;
+			}
+			&_3{
+				left: 107px;
+				top: 35px;
+			}
+		}
+	}
+	@include resp-min(lg){
+		&__pan{
+			width: 110px;
+			&_1{
+				left: 55px;
+				top: -15px;
+			}
+			&_2{
+				left: 185px;
+				top: -15px;
+			}
+			&_3{
+				left: 125px;
+				top: 25px;
+			}
+		}
+	}
+}

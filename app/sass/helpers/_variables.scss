@@ -56,6 +56,7 @@
 			);
 
 		// Skills
+			$skill-name-game: 'kitchen';
 
 			$color-roof: #fffc00;
 			$color-roof-part: #000;
@@ -79,16 +80,24 @@
 			);
 
 			$color-plates: (
-				'yellow' 				: #ede786,
-				'blue'	 				: #1d7df3,
-				'pink' 					: #b755ef,
-				'purple' 				: #79147f,
-				'lime'    			: #1df3a0,
-				'light-blue' 		: #55b7ef,
-				'red'     			: #e1411c,
-				'turquoise'			: #48efe9,
-				'lemon'					: #beea27
+				'skill1' 				: #ede786,
+				'skill2'	 			: #1d7df3,
+				'skill3' 				: #b755ef,
+				'skill4' 				: #79147f,
+				'skill5'    		: #1df3a0,
+				'skill6' 				: #55b7ef,
+				'skill7'     		: #e1411c,
+				'skill8'				: #48efe9,
+				'skill9'				: #beea27
 			);
+			$pan-title-color: #fff;
+			
+			$pan-cover-default: #383838;
+			$pan-cover-light-default: #484848;
+
+			$pan-cover-hover: #5d5d5d;
+			$pan-cover-light-hover: #7a7a7a;
+
 
 		// Get in touch
 

@@ -5,7 +5,7 @@ block variables
 	- var description = "Kitchen Of Design";
 	include includes/helpers/data
 block content
-	+b.SECTION.about-us.vsection#section-about-us
+	+b.SECTION.about-us.vsection.js-section#section-about-us
 		+e.part._man
 		+e.part._girl
 		.vcontainer
@@ -36,7 +36,7 @@ block content
 							+e.P.title HELLO, <br>MY NAME IS...
 							+e.P.name Alina<br>Yaremachenko
 							+e.P.description I really like nature, elegant food and delicious design.
-	+b.SECTION.skills.vsection#section-skills
+	+b.SECTION.skills.vsection.js-section#section-skills
 		.vcontainer
 			.vrow
 				.vak.xs-12.sm-6
@@ -50,7 +50,7 @@ block content
 				.vrow
 					for kitchenBlock in kitchenTables
 						+kitchen-block(kitchenBlock.skill1, kitchenBlock.skill2, kitchenBlock.skill3, kitchenBlock.lampColor)
-	+b.SECTION.contact.vsection#section-skills
+	+b.SECTION.contact.vsection.js-section#section-contact
 		.vcontainer
 			+b.group
 				+e.H3.title.contact__title <span class="group__letter group__letter_yellow" data-letter="G">G</span>et in touchhh
@@ -59,23 +59,26 @@ block content
 					+e.information
 						+e.icons
 							+b.icon
-								+e.header
-									+e.img-wrap
-										+e.IMG.img(src="img/paper-airplane-flying.svg")
-								+e.body
-									+e.A.text(href="mailto: alinayaremachenko@gmail.com") alinayaremachenko@gmail.com
+								+e.A.link(href="mailto: kitchen.of.design@gmail.com")
+									+e.header
+										+e.img-wrap
+											+e.IMG.img(src="img/paper-airplane-flying.svg")
+									+e.body
+										+e.P.text kitchen.of.design@gmail.com
 							+b.icon
-								+e.header
-									+e.img-wrap
-										+e.IMG.img(src="img/smartphone.svg")
-								+e.body
-									+e.A.text(href="tel: + 38 (093)-964-94-91") + 38 (093)-964-94-91
+								+e.A.link(href="tel: + 38 (000)-000-00-00")
+									+e.header
+										+e.img-wrap
+											+e.IMG.img(src="img/smartphone.svg")
+									+e.body
+										+e.P.text + 38 (000)-000-00-00
 							+b.icon
-								+e.header
-									+e.img-wrap
-										+e.IMG.img(src="img/skype.svg")
-								+e.body
-									+e.A.text(href="tel: alina.yaremachenko") alina.yaremachenko
+								+e.A.link(href="tel: kitchen.of.design")
+									+e.header
+										+e.img-wrap
+											+e.IMG.img(src="img/skype.svg")
+									+e.body
+										+e.P.text kitchen.of.design
 						+e.social
 							+e.P.social-title Find Us:
 							+b.social

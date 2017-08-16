@@ -29,12 +29,15 @@
 @import 'components/list';
 @import 'components/collapse';
 
-@import 'parts/sections/about-us';
+@import 'parts/sections/about-us/about-us';
 @import 'parts/sections/skills/skills';
-@import 'parts/sections/portfolio';
-@import 'parts/sections/blog';
-@import 'parts/sections/contact';
-@import 'parts/sections/copyright';
+
+@import 'parts/sections/skills/kitchen/kitchen-all';
+
+@import 'parts/sections/portfolio/portfolio';
+@import 'parts/sections/blog/blog';
+@import 'parts/sections/contact/contact';
+@import 'parts/sections/copyright/copyright';
 
 @import "dev/loader";
 @import "dev/text";

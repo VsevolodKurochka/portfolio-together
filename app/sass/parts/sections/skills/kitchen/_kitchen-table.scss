@@ -1,0 +1,10 @@
+.#{$skill-name-game}{
+	&__table{
+		@include pos(r);
+		text-align: center;
+		font-size: 0;
+		&-img{
+			max-width: 320px;
+		}
+	}
+}

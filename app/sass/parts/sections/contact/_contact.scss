@@ -40,17 +40,27 @@
 			text-align: center;
 		}
 	}
-	&:hover &__img{
-		opacity: 1;
-	}
+	
 	&__body{
 		color: setColor('white');
 	}
+	&__link{
+		display: inline-block;
+		text-decoration: none;
+	}
 	&__text{
 		display: block;
-		text-decoration: none;
 		color: inherit;
 		font-weight: bold;
+		@include transition();
+	}
+	&:hover &{
+		&__img{
+			opacity: 1;
+		}
+		&__text{
+			color: setColor('yellow');
+		}
 	}
 	@include resp-min(sm){
 		&__text{

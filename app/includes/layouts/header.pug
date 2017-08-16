@@ -1,5 +1,5 @@
 include ../bem/index
-header.site-header
+header.site-header.js-section#section-home
 	//-+b.wave._bottom._brand-1
 		+e.SVG.item._1(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 198" xml:space="preserve")
 			path( class="st0" d="M1919,123C1545.8,123,1427.1,1.8,945.8,2C465.8,2,345.8,123-1,123v77h1920C1919,200,1919,152,1919,123z"))
@@ -37,16 +37,16 @@ header.site-header
 					+e.UL.list
 						+e.LI.list-item
 							+e.number 1
-							+e.code._blue._indent-1 #{'<!DOCTYPE html>'}
+							+e.code._blue._indent-1.type-it#monitor-line-1(data-delay="500") #{'<!DOCTYPE html>'}
 						+e.LI.list-item
 							+e.number 2
-							+e.code._blue._indent-1 #{'<html>'}
+							+e.code._blue._indent-1.type-it#monitor-line-2(data-delay="2500") #{'<html>'}
 						+e.LI.list-item
 							+e.number 3
-							+e.code._green._indent-3 #{'<head>'}
+							+e.code._green._indent-3.type-it#monitor-line-3(data-delay="3500") #{'<head>'}
 						+e.LI.list-item
 							+e.number 4
-							+e.code._yellow._indent-5 #{'<title>'} <span class="color-black">Welcome!</span> #{'</title>'}
+							+e.code._yellow._indent-5.type-it#monitor-line-4(data-delay="4500") #{'<title>'} <span class='color-black monitor__typing'>Welcome!</span> #{'</title>'}
 					+e.title-wrap
-						+e.H1.title.vtitle-big <span class="color-green">KitchenOfD</span><span class="monitor__part-2">esign</span>
-						+e.P.title-small.vtitle-small.text-right.monitor__part-2 Web Studio
+						+e.H1.title.vtitle-big.type-it(data-delay="7500") <span class="color-green">KitchenOfD</span><span class="monitor__part-2">esign</span>
+						+e.P.title-small.vtitle-small.text-right.monitor__part-2.type-it(data-delay="8500") Web Studio

@@ -52,7 +52,7 @@ mixin iconContact()
 mixin menu-item(isLink, href, name, icon)
 	li(class="vnav__menu-item")
 		if isLink === 'true'
-			a.anchor( href=href )
+			a.vnav__menu-item-link.anchor( href=href )
 				.vnav__menu-item-icon-wrap
 					if icon
 						+#{icon}()

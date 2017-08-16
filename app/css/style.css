@@ -556,23 +556,29 @@ End:  HIDDEN AND VISIBLE UTILITIES
   border-top: 1px solid #b2b2b2;
 }
 
-.vnav__menu-item, .vnav__menu-item-text, .vnav__menu-item-icon path {
+.vnav, .vnav__menu-item-link, .vnav__menu-item-text, .vnav__menu-item-icon path {
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 
-.vnav__menu-item {
-  display: block;
-  padding: 5px;
-  text-align: center;
-  font-size: 14px;
+.vnav.is-hidden {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
-.vnav__menu-item a {
+.vnav__menu-item {
   display: block;
+}
+
+.vnav__menu-item-link {
+  display: block;
+  padding: 5px;
   position: relative;
   color: inherit;
   text-decoration: none;
+  text-align: center;
+  font-size: 14px;
 }
 
 .vnav__menu-item-text {
@@ -609,13 +615,13 @@ End:  HIDDEN AND VISIBLE UTILITIES
   fill: #929292;
 }
 
-.vnav__menu-item:hover .vnav__menu-item-text,
-.vnav__menu-item.active .vnav__menu-item-text {
+.vnav__menu-item-link:hover .vnav__menu-item-text,
+.vnav__menu-item-link.active .vnav__menu-item-text {
   color: #f24d16;
 }
 
-.vnav__menu-item:hover .vnav__menu-item-icon path,
-.vnav__menu-item.active .vnav__menu-item-icon path {
+.vnav__menu-item-link:hover .vnav__menu-item-icon path,
+.vnav__menu-item-link.active .vnav__menu-item-icon path {
   fill: #f24d16;
 }
 
@@ -796,6 +802,44 @@ End:  HIDDEN AND VISIBLE UTILITIES
   background-color: #f00;
 }
 
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
 .vbtn {
   display: inline-block;
   position: relative;
@@ -955,44 +999,6 @@ End:  HIDDEN AND VISIBLE UTILITIES
   width: 100%;
 }
 
-@-webkit-keyframes formShake {
-  10%, 90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0);
-  }
-}
-
-@keyframes formShake {
-  10%, 90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0);
-  }
-}
-
 .vform__row {
   position: relative;
   margin-top: 15px;
@@ -1048,15 +1054,15 @@ End:  HIDDEN AND VISIBLE UTILITIES
 .vform__line-y {
   position: absolute;
   left: -5px;
-  top: -100px;
+  top: 0;
   width: 5px;
-  height: 140%;
+  height: 100%;
   background-color: #fff;
 }
 
 .vform_error [type="submit"] {
-  -webkit-animation: formShake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-          animation: formShake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -1371,6 +1377,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
 @media (max-width: 767px) {
   .about-us {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -1732,7 +1739,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
   left: 0;
   top: 30px;
   width: 50px;
-  height: 80px;
+  height: 0;
   -webkit-transform: perspective(120px) rotateX(145deg);
           transform: perspective(120px) rotateX(145deg);
   -webkit-transform-origin: top center;
@@ -1768,10 +1775,16 @@ input[type="checkbox"]:checked + .control__indicator:before {
 
 .kitchen__bulb.active:before {
   opacity: 1;
+  height: 80px;
 }
 
 .kitchen__bulb.active path {
   fill: #FFDA44;
+}
+
+.kitchen__item-roof {
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .kitchen__table {
@@ -1813,9 +1826,8 @@ input[type="checkbox"]:checked + .control__indicator:before {
   position: absolute;
   left: 50%;
   top: 50%;
-  padding: 5px 15px;
-  background-color: #fff;
-  color: #000;
+  padding: 5px 0;
+  color: #fff;
   font-size: 25px;
   font-weight: bold;
   line-height: 1;
@@ -1823,6 +1835,11 @@ input[type="checkbox"]:checked + .control__indicator:before {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.kitchen__pan-cover path, .kitchen__pan-plate path {
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
@@ -1846,79 +1863,96 @@ input[type="checkbox"]:checked + .control__indicator:before {
 }
 
 .kitchen__pan-plate path {
-  fill: #272727;
+  fill: #383838;
 }
 
-.kitchen__pan_yellow.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill1.active .kitchen__pan-cover-st0 {
   fill: #ede786;
 }
 
-.kitchen__pan_yellow.active .kitchen__pan-plate path {
+.kitchen__pan_skill1.active .kitchen__pan-plate path {
   fill: #ede786;
 }
 
-.kitchen__pan_blue.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill2.active .kitchen__pan-cover-st0 {
   fill: #1d7df3;
 }
 
-.kitchen__pan_blue.active .kitchen__pan-plate path {
+.kitchen__pan_skill2.active .kitchen__pan-plate path {
   fill: #1d7df3;
 }
 
-.kitchen__pan_pink.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill3.active .kitchen__pan-cover-st0 {
   fill: #b755ef;
 }
 
-.kitchen__pan_pink.active .kitchen__pan-plate path {
+.kitchen__pan_skill3.active .kitchen__pan-plate path {
   fill: #b755ef;
 }
 
-.kitchen__pan_purple.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill4.active .kitchen__pan-cover-st0 {
   fill: #79147f;
 }
 
-.kitchen__pan_purple.active .kitchen__pan-plate path {
+.kitchen__pan_skill4.active .kitchen__pan-plate path {
   fill: #79147f;
 }
 
-.kitchen__pan_lime.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill5.active .kitchen__pan-cover-st0 {
   fill: #1df3a0;
 }
 
-.kitchen__pan_lime.active .kitchen__pan-plate path {
+.kitchen__pan_skill5.active .kitchen__pan-plate path {
   fill: #1df3a0;
 }
 
-.kitchen__pan_light-blue.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill6.active .kitchen__pan-cover-st0 {
   fill: #55b7ef;
 }
 
-.kitchen__pan_light-blue.active .kitchen__pan-plate path {
+.kitchen__pan_skill6.active .kitchen__pan-plate path {
   fill: #55b7ef;
 }
 
-.kitchen__pan_red.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill7.active .kitchen__pan-cover-st0 {
   fill: #e1411c;
 }
 
-.kitchen__pan_red.active .kitchen__pan-plate path {
+.kitchen__pan_skill7.active .kitchen__pan-plate path {
   fill: #e1411c;
 }
 
-.kitchen__pan_turquoise.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill8.active .kitchen__pan-cover-st0 {
   fill: #48efe9;
 }
 
-.kitchen__pan_turquoise.active .kitchen__pan-plate path {
+.kitchen__pan_skill8.active .kitchen__pan-plate path {
   fill: #48efe9;
 }
 
-.kitchen__pan_lemon.active .kitchen__pan-cover-st0 {
+.kitchen__pan_skill9.active .kitchen__pan-cover-st0 {
   fill: #beea27;
 }
 
-.kitchen__pan_lemon.active .kitchen__pan-plate path {
+.kitchen__pan_skill9.active .kitchen__pan-plate path {
   fill: #beea27;
+}
+
+.kitchen__pan:hover:not(.active) {
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.kitchen__pan:hover:not(.active) .kitchen__pan-cover-st0 {
+  fill: #5d5d5d;
+}
+
+.kitchen__pan:hover:not(.active) .kitchen__pan-cover-st1 {
+  fill: #7a7a7a;
+}
+
+.kitchen__pan:hover:not(.active) .kitchen__pan-plate path {
+  fill: #5d5d5d;
 }
 
 .kitchen__pan.active .kitchen__pan-cover {
@@ -1933,11 +1967,6 @@ input[type="checkbox"]:checked + .control__indicator:before {
 
 .kitchen__pan.active .kitchen__pan-title {
   opacity: 1;
-}
-
-.kitchen__item-roof {
-  margin-left: -15px;
-  margin-right: -15px;
 }
 
 @media (max-width: 767px) {
@@ -2074,19 +2103,29 @@ input[type="checkbox"]:checked + .control__indicator:before {
   text-align: center;
 }
 
-.icon:hover .icon__img {
-  opacity: 1;
-}
-
 .icon__body {
   color: #fff;
 }
 
+.icon__link {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .icon__text {
   display: block;
-  text-decoration: none;
   color: inherit;
   font-weight: bold;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.icon:hover .icon__img {
+  opacity: 1;
+}
+
+.icon:hover .icon__text {
+  color: #fcff00;
 }
 
 @media (min-width: 768px) {
@@ -2142,9 +2181,15 @@ input[type="checkbox"]:checked + .control__indicator:before {
   background-color: #000000;
   color: #666666;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .copyright {
+    font-size: 18px;
+  }
 }
 
 .loader, .loader__section {
@@ -2698,9 +2743,6 @@ input[type="checkbox"]:checked + .control__indicator:before {
 }
 
 @media (min-width: 768px) {
-  .group {
-    margin-bottom: 45px;
-  }
   .group__title {
     font-size: 45px;
     margin-bottom: 60px;
@@ -2761,10 +2803,6 @@ input[type="checkbox"]:checked + .control__indicator:before {
 
 .text-right {
   text-align: right;
-}
-
-.site {
-  padding-bottom: 86px;
 }
 
 .monitor {
@@ -2903,6 +2941,43 @@ input[type="checkbox"]:checked + .control__indicator:before {
 
 .monitor__part-2 {
   color: #ccc;
+}
+
+@-webkit-keyframes typing {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.monitor__typing {
+  position: relative;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.monitor__typing:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  -webkit-animation: typing 0.75s ease 0s infinite alternate;
+          animation: typing 0.75s ease 0s infinite alternate;
 }
 
 @media (min-width: 480px) {

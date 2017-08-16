@@ -1,0 +1,94 @@
+.#{$skill-name-game}{
+	&__pan{
+		position: absolute;
+		width: 90px;
+		z-index: 3;
+		&_1{
+			left: 20px;
+			top: -10px;
+		}
+		&_2{
+			left: 146px;
+			top: -10px;
+		}
+		&_3{
+			left: 90px;
+			top: 25px;
+		}
+		&-header{
+			margin-bottom: 7.5px;
+		}
+		&-title{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			padding: 5px 0;
+			color: $pan-title-color;
+			font-size: 25px;
+			font-weight: bold;
+			line-height: 1;
+			opacity: 0;
+			transform: translate(-50%, -50%);
+			@include transition();
+		}
+		&-cover,
+		&-plate{
+			path{
+				@include transition();
+			}
+		}
+		&-cover{
+			position: relative;
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			z-index: z('default') + 1;
+			@include transition();
+			&-st0{
+				fill: $pan-cover-default;
+			}
+			&-st1{
+				fill: $pan-cover-light-default;
+			}
+		}
+		&-plate path{
+			fill: $pan-cover-default;
+		}
+		@each $name, $color in $color-plates{
+			&_#{$name}.active &-cover-st0{
+				fill: $color;
+			}
+			&_#{$name}.active &-plate path{
+				fill: $color;
+			}
+		}
+		&:hover:not(.active){
+			animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+		}
+		&:hover:not(.active) &{
+			&-cover{
+				&-st0{
+					fill: $pan-cover-hover;
+				}
+				&-st1{
+					fill: $pan-cover-light-hover;
+				}
+			}
+			&-plate{
+				path{
+					fill: $pan-cover-hover;
+				}
+			}
+		}
+		&.active &-cover{
+			transform: translateY(-45px);
+			&-st1{
+				fill: setColor('white');
+			}
+		}
+		&.active &-title{
+			opacity: 1;
+		}
+
+	}
+}
