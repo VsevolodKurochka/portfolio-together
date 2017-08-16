@@ -744,12 +744,6 @@ End:  HIDDEN AND VISIBLE UTILITIES
   z-index: 1;
 }
 
-@media (min-width: 1025px) {
-  .site-header {
-    padding-top: 70px;
-  }
-}
-
 .inline-block {
   display: inline-block;
 }
