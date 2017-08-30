@@ -1,5 +1,4 @@
 extends includes/layout
-
 block variables
 	- var title = "Kitchen Of Design";
 	- var description = "Kitchen Of Design";
@@ -10,39 +9,16 @@ block content
 		+e.part._girl
 		.vcontainer
 			.vrow
-				+b.person._man.vak.xs-12.sm-6
-					+b.group
-						+e.H3.title <span class="group__letter group__letter_brand-1" data-letter="A">A</span>bout Usss
-						+e.P.text.color-white Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-					+e.item
-						+e.header
-							+e.header-icon-wrap
-								+e.header-icon-inner
-									+e.IMG.header-icon(src="img/repairing.svg")
-							+e.header-image-wrap
-								+e.IMG.header-image(src="img/man.svg")
-						+e.body
-							+e.P.title HELLO, <br>MY NAME IS...
-							+e.P.name Vsevolod<br>Kurochka
-							+e.P.description I like creating flexible and supported code.				
-				+b.person._girl.vak.xs-12.sm-6
-					+e.item
-						+e.header
-							+e.header-icon-wrap
-								+e.IMG.header-icon(src="img/thinking.svg")
-							+e.header-image-wrap
-								+e.IMG.header-image(src="img/girl.svg")
-						+e.body
-							+e.P.title HELLO, <br>MY NAME IS...
-							+e.P.name Alina<br>Yaremachenko
-							+e.P.description I really like nature, elegant food and delicious design.
+				+b.person._man.vak.vak-12.vak-xs-6
+					+title('brand-1', 'A', 'bout Usss', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 'color-white')
+					+about-us('img/repairing.svg', 'img/man.svg', 'HELLO, <br> MY NAME IS...', 'Vsevolod<br/>Kurochka', 'I like creating flexible and supported code.')
+				+b.person._girl.vak.vak-12.vak-xs-6
+					+about-us('img/thinking.svg', 'img/girl.svg', 'HELLO, <br/> MY NAME IS...', 'Alina<br>Yaremachenko', 'I really like nature, elegant food and delicious design.')
 	+b.SECTION.skills.vsection.js-section#section-skills
 		.vcontainer
 			.vrow
-				.vak.xs-12.sm-6
-					+b.group
-						+e.H3.title <span class="group__letter group__letter_blue" data-letter="O">O</span>ur Skillsss
-						+e.P.text This section is made in the form of a game. When you click on the pot, the skill that we own is shown. Have a good mood!
+				.vak.vak-12.vak-sm-6
+					+title('blue', 'O', 'ur Skillsss', 'This section is made in the form of a game. When you click on the pot, the skill that we own is shown. Have a good mood!')
 		+b.kitchen
 			+e.roof-wrap
 				+kitchen-roof()
@@ -50,45 +26,29 @@ block content
 				.vrow
 					for kitchenBlock in kitchenTables
 						+kitchen-block(kitchenBlock.skill1, kitchenBlock.skill2, kitchenBlock.skill3, kitchenBlock.lampColor)
+	+b.SECTION.vsection.blog.js-section#section-blog
+		.vcontainer
+			.vrow
+				.vak.vak-12.vak-sm-5
+					+title('orange', 'B', 'loggg', 'We will publish the latest news from the world of IT', 'color-dark-light')
+				.vak.vak-12.vak-sm-7
+					for post in blogPosts
+						+post(post.image, post.category, post.date, post.title)
 	+b.SECTION.contact.vsection.js-section#section-contact
 		.vcontainer
-			+b.group
-				+e.H3.title.contact__title <span class="group__letter group__letter_yellow" data-letter="G">G</span>et in touchhh
+			+title('yellow', 'G', 'et in touchhh')
 			.vrow
-				.vak.xs-12.sm-6
+				.vak.vak-12.vak-sm-6
 					+e.information
 						+e.icons
-							+b.icon
-								+e.A.link(href="mailto: kitchen.of.design@gmail.com")
-									+e.header
-										+e.img-wrap
-											+e.IMG.img(src="img/paper-airplane-flying.svg")
-									+e.body
-										+e.P.text kitchen.of.design@gmail.com
-							+b.icon
-								+e.A.link(href="tel: + 38 (000)-000-00-00")
-									+e.header
-										+e.img-wrap
-											+e.IMG.img(src="img/smartphone.svg")
-									+e.body
-										+e.P.text + 38 (000)-000-00-00
-							+b.icon
-								+e.A.link(href="tel: kitchen.of.design")
-									+e.header
-										+e.img-wrap
-											+e.IMG.img(src="img/skype.svg")
-									+e.body
-										+e.P.text kitchen.of.design
+							for contact in contacts
+								+contact-icon(contact.action, contact.value, contact.icon)
 						+e.social
 							+e.P.social-title Find Us:
 							+b.social
-								+e.A.item._fb(href="#")
-									+e.item-icon(src="img/facebook-letter-logo.svg")
-								+e.A.item._instagram(href="#")
-									+e.item-icon(src="img/instagram-logo.svg")
-								+e.A.item._vk(href="#")
-									+e.item-icon(src="img/vk-social-network-logo.svg")
-				.vak.xs-12.sm-6
+								for social in socials
+									+social(social.social, social.link, social.icon)
+				.vak.vak-12.vak-sm-6
 					+b.FORM.vform._white(action="application.php" method="POST")
 						+e.line-y
 							+e.line-y-part
@@ -107,7 +67,7 @@ block content
 						+e.row.text-center
 							+e.BUTTON.button.vbtn._large._border-yellow.effect._bounce-top(type="submit") SEND
 	+b.copyright
-		p © Copyright 2017 | Developed by KOD
+		p=copyright
 block footer
 
 block dev

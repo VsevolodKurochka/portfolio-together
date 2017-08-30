@@ -1,15 +1,18 @@
 /* ===================== 
 Start: COLUMNS      
 ======================== */
-@include make-column(xs,"not-push","not-pull","not-offset");
+@include make-column();
+@include resp-min(xs){
+  @include make-column(xs);
+}
 @include resp-min(sm){
-  @include make-column(sm,"not-push","not-pull","not-offset");
+  @include make-column(sm);
 }
 @include resp-min(md){
-  @include make-column(md,"not-push","not-pull","not-offset");
+  @include make-column(md);
 }
 @include resp-min(lg){
-  @include make-column(lg,"not-push","not-pull","not-offset");
+  @include make-column(lg);
 }
 /* =====================
 End:  COLUMNS
@@ -58,10 +61,6 @@ End:  HIDDEN AND VISIBLE UTILITIES
   display: block;
   @include xOffset('margin', auto);
 }
-// .cf{
-//   @include cf();
-//   @extend .relative;
-// }
 .negative-margin,
 .vrow{
   @include xOffset('margin', - getComp(gutter));

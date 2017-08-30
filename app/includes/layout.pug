@@ -3,7 +3,8 @@ html(lang="ru")
 	head
 		include helpers/mixins
 		include bem/index
-		
+		block static-variables
+			- var copyright = "© Copyright 2017 | Developed by KOD";
 		block variables
 
 		+add-meta('title', title)

@@ -23,8 +23,13 @@
       color: setColor('brand-2');
     }
   }
-  &-black{
-    color: setColor('dark', 'black');
+  &-dark{
+    &-black{
+      color: setColor('dark', 'black');
+    }
+    &-light{
+      color: setColor('dark', 'light');
+    }
   }
   &-green{
     color: setColor('green');

@@ -6,7 +6,7 @@
   &-wrap,
   &-links,
   &-content{
-    @include cf();
+    //@include cf();
   }
   &-links{
     margin-bottom: getComp(gutter) * 3;

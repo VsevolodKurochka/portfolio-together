@@ -1,0 +1,149 @@
+.blog{
+	overflow: hidden;
+	// &:before{
+	// 	@include pseudo();
+	// 	left: 0;
+	// 	top: 0;
+	// 	width: 100%;
+	// 	height: 130%;
+	// 	background-color: #6CA7CD;
+	// 	transform: skew(30deg);
+	// }
+}
+.post{
+	display: flex;
+	align-items: center;
+	@include pos(r);
+	overflow: hidden;
+	&:before{
+		@include pseudo();
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: setColor('orange');
+	}
+	@at-root{
+		%post-transition{
+			@include transition();
+		}
+	}
+	&__image{
+		height: 100%;
+		object-fit: cover;
+		&-wrap{
+			@include pos(a);
+			left: 0;
+			top: 0;
+			height: 100%;
+			font-size: 0;
+			opacity: 0;
+			@extend %post-transition;
+			&:before{
+				@include pseudo();
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: transparentize(setColor('dark', 'black'), 0.5);
+			}
+		}
+	}
+	&__body{
+		@include pos(r);
+		padding-left: 15px;
+		padding-right: 15px;
+		z-index: 1;
+		color: setColor('dark', 'black');
+		@extend %post-transition;
+	}
+	&__information{
+		font-size: 18px;
+		font-weight: 100;
+		margin-bottom: 10px;
+		color: setColor('dark', 'black');
+		@extend %post-transition;
+	}
+	&__date{
+		font-weight: 100;
+	}
+	&__category{
+		@include pos(r);
+		display: inline-block;
+		font-weight: 400;
+		padding-right: 15px;
+		text-decoration: none;
+		color: inherit;
+		&:after{
+			@include pseudo();
+			right: 7.5px;
+			top: 0;
+			width: 1px;
+			height: 100%;
+			background-color: setColor('orange');
+		}
+	}
+	&__title{
+		display: block;
+		@include pos(r);
+		padding-left: 15px;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 1.1;
+		color: inherit;
+		@extend %post-transition;
+		&:before{
+			@include pseudo();
+			left: 0;
+			top: 0;
+			width: 2px;
+			height: 100%;
+
+			background-color: setColor('orange');
+			@extend %post-transition;
+		}
+	}
+	&:hover &{
+		&__image{
+			&-wrap{
+				opacity: 1;
+			}
+		}
+		&__information,
+		&__title{
+			color: setColor('white');
+		}
+	}
+	@include resp-max(sm){
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	@include resp-min(sm){
+		min-height: 200px;
+	}
+	@include resp-min(lg){
+		&__body{
+			padding-right: 60px;
+		}
+		&__title{
+			font-size: 24px;
+			padding-left: 0;
+			&:before{
+				opacity: 0;
+			}
+		}
+		&:hover &{
+			&__body{
+				transform: translateX(45px);
+			}
+			&__title{
+				padding-left: 15px;
+				&:before{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

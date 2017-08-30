@@ -13,7 +13,7 @@ $breakpoints: (
 	lg        : 1200px,
 	md        : 1025px,
 	sm        : 768px,
-	xs        : 480px,
+	xs        : 576px,
 	exs       : 320px
 );
 
@@ -41,7 +41,7 @@ $colors: (
 	'dark': (
 		'base' 	: #333,
 		'black' : #000,
-		'light' : #f3f3f3
+		'light' : #9f9f9f
 	),
 	'white': (
 		'base'  : #fff
@@ -54,6 +54,9 @@ $colors: (
 	),
 	'yellow' : (
 		'base'	: #fcff00
+	),
+	'orange' : (
+		'base'  : #f24d16
 	)
 );
 
@@ -92,6 +95,7 @@ $z-indexes: (
 	'modal'						: 1000,
 	'modal__overlay' 	: 999,
 	'fixed'						: 10,
+	'border'					: 5,
 	'default'     		: 1,
 	'below'       		: -1
 );
